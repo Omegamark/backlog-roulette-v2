@@ -1,0 +1,32 @@
+hr {
+    width: 30%;
+    margin: auto;
+    margin-top: 50%;
+    margin-bottom: 5%;
+    transition: 1s;
+    border-color: purple;
+  }
+  
+  hr:hover {
+    transform-origin: 100%;
+    /* transform: rotate(10deg); */
+    animation-duration: 0.5s;
+    animation-name: changewidth;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  
+  @keyframes changewidth {
+    from {
+      /* width: 100px; */
+      transform-origin: 100%;
+      transform: rotate(10deg);
+    }
+  
+    to {
+      /* width: 300px; */
+      transform-origin: 100%;
+      transform: rotate(-10deg);
+    }
+  }
+  
