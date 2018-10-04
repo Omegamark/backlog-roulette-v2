@@ -26,19 +26,19 @@ class Wheel extends Component {
       const faceStyle = {
         height: height,
         transform: `translate3d(0px, ${offsetY}, ${offsetX}) rotateX(${deg})`,
-        backgroundImage: `url(${item.imgUrl})`,
+        // backgroundImage: `url(${item.imgUrl})`,
         backgroundPosition: 'center',
         backgroundSize: `200px ${height}`
       }
       const style = {...faceStyle, ...faceCommon}
       return (
         <div
-          key={item.label}
+          key={item.name}
           className={`face`}
           style={style}
           onClick={onClick}
         >
-          {item.label}
+          {item.name}
         </div>
       );
     });

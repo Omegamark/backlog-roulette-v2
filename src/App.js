@@ -16,7 +16,14 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({items: getGameInfo()});
+    getGameInfo('Dragon Age 3').then(data => {
+      if(data) {
+        console.log(data.data.length);
+        this.setState({items: data.data});
+      } else {
+        console.log('bad data');
+      }
+    });
   }
 
   setDegsRotated() {
@@ -26,7 +33,7 @@ class App extends Component {
     const newDegrees = degsRotated + (spinSize * thetaDeg)
     this.setState({ degsRotated: newDegrees });
     const index = Math.round((items.length - (((Math.abs(degsRotated + (spinSize * thetaDeg)))/thetaDeg))%items.length)%(items.length));
-    console.log(items[index].label);
+    console.log(items[index].name);
   }
 
   render() {
